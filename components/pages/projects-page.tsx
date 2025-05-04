@@ -4,10 +4,10 @@ import { useState } from "react"
 import { PageLayout } from "@/components/layout/page-layout"
 import { ProjectsGrid } from "@/components/projects/projects-grid"
 import { ProjectFilters } from "@/components/projects/project-filters"
-import { useMockProjects } from "@/hooks/use-mock-projects"
+import { useProjects } from "@/hooks/use-projects"
 
 export function ProjectsPage() {
-  const { projects, categories } = useMockProjects()
+  const { projects, categories, isLoading, error } = useProjects()
   const [activeFilter, setActiveFilter] = useState<string>("all")
 
   const filteredProjects =
