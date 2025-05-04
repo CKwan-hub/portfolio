@@ -100,13 +100,21 @@ export function ContactForm() {
         <FormField
           control={form.control}
           name="name"
-          render={({ field }) => (
+          render={({ field, formState }) => (
             <FormItem>
-              <FormLabel>Name</FormLabel>
+              <FormLabel htmlFor="name-input">Name</FormLabel>
               <FormControl>
-                <Input placeholder="Your name" {...field} />
+                <Input
+                  id="name-input"
+                  placeholder="Your name"
+                  {...field}
+                  aria-invalid={formState.errors.name ? "true" : undefined}
+                  aria-describedby={
+                    formState.errors.name ? "name-error" : undefined
+                  }
+                />
               </FormControl>
-              <FormMessage />
+              <FormMessage id="name-error" />
             </FormItem>
           )}
         />
@@ -114,13 +122,21 @@ export function ContactForm() {
         <FormField
           control={form.control}
           name="email"
-          render={({ field }) => (
+          render={({ field, formState }) => (
             <FormItem>
-              <FormLabel>Email</FormLabel>
+              <FormLabel htmlFor="email-input">Email</FormLabel>
               <FormControl>
-                <Input placeholder="your.email@example.com" {...field} />
+                <Input
+                  id="email-input"
+                  placeholder="your.email@example.com"
+                  {...field}
+                  aria-invalid={formState.errors.email ? "true" : undefined}
+                  aria-describedby={
+                    formState.errors.email ? "email-error" : undefined
+                  }
+                />
               </FormControl>
-              <FormMessage />
+              <FormMessage id="email-error" />
             </FormItem>
           )}
         />
@@ -128,13 +144,21 @@ export function ContactForm() {
         <FormField
           control={form.control}
           name="phone"
-          render={({ field }) => (
+          render={({ field, formState }) => (
             <FormItem>
-              <FormLabel>Phone</FormLabel>
+              <FormLabel htmlFor="phone-input">Phone</FormLabel>
               <FormControl>
-                <Input placeholder="012-345-6789" {...field} />
+                <Input
+                  id="phone-input"
+                  placeholder="012-345-6789"
+                  {...field}
+                  aria-invalid={formState.errors.phone ? "true" : undefined}
+                  aria-describedby={
+                    formState.errors.phone ? "phone-error" : undefined
+                  }
+                />
               </FormControl>
-              <FormMessage />
+              <FormMessage id="phone-error" />
             </FormItem>
           )}
         />
@@ -142,13 +166,21 @@ export function ContactForm() {
         <FormField
           control={form.control}
           name="subject"
-          render={({ field }) => (
+          render={({ field, formState }) => (
             <FormItem>
-              <FormLabel>Subject</FormLabel>
+              <FormLabel htmlFor="subject-input">Subject</FormLabel>
               <FormControl>
-                <Input placeholder="What is this regarding?" {...field} />
+                <Input
+                  id="subject-input"
+                  placeholder="What is this regarding?"
+                  {...field}
+                  aria-invalid={formState.errors.subject ? "true" : undefined}
+                  aria-describedby={
+                    formState.errors.subject ? "subject-error" : undefined
+                  }
+                />
               </FormControl>
-              <FormMessage />
+              <FormMessage id="subject-error" />
             </FormItem>
           )}
         />
@@ -156,17 +188,22 @@ export function ContactForm() {
         <FormField
           control={form.control}
           name="message"
-          render={({ field }) => (
+          render={({ field, formState }) => (
             <FormItem>
-              <FormLabel>Message</FormLabel>
+              <FormLabel htmlFor="message-input">Message</FormLabel>
               <FormControl>
                 <Textarea
+                  id="message-input"
                   placeholder="Your message..."
                   className="min-h-[120px]"
                   {...field}
+                  aria-invalid={formState.errors.message ? "true" : undefined}
+                  aria-describedby={
+                    formState.errors.message ? "message-error" : undefined
+                  }
                 />
               </FormControl>
-              <FormMessage />
+              <FormMessage id="message-error" />
             </FormItem>
           )}
         />

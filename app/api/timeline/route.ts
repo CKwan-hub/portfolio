@@ -8,6 +8,9 @@ export async function GET() {
       include: {
         projects: true
       },
+      orderBy: {
+        createdAt: 'asc', 
+      },
     })
 
     return NextResponse.json({ timelineItems })

@@ -214,7 +214,7 @@ export function TimelineSection() {
             <div className="bg-card rounded-lg shadow-sm p-6 h-full border border-border/50 backdrop-blur-sm bg-opacity-80">
               <div className="space-y-6">
                 <div>
-                  <h3 className="text-lg font-semibold mb-1 text-primary">
+                  <h3 className="text-3xl font-extrabold mb-1 text-primary">
                     {
                       timelineItems.find((item) => item.id === activeItemId)
                         ?.company
@@ -349,7 +349,7 @@ export function TimelineSection() {
                       </div>
                     </div>
 
-                    <h3 className="text-xl font-semibold mb-3 text-foreground">
+                    <h3 className="text-2xl font-semibold mb-3 text-foreground">
                       {item.role}
                     </h3>
                     <p className="text-muted-foreground mb-4">
@@ -363,7 +363,7 @@ export function TimelineSection() {
                           key={idx}
                           className="border-t border-border/50 pt-4"
                         >
-                          <h4 className="font-medium mb-2 text-accent">
+                          <h4 className="font-bold mb-2 text-primary text-xl">
                             {project.name}
                           </h4>
                           <p className="text-sm text-muted-foreground mb-3">
