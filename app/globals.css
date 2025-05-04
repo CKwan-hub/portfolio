@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light Theme - With burgundy accents and high contrast */
+    --background: 0 0% 98%; /* #fafafa - Very light gray */
+    --foreground: 0 0% 12%; /* #1f1f1f - Near black for text */
+
+    --card: 0 0% 100%; /* #ffffff - White */
+    --card-foreground: 0 0% 12%; /* #1f1f1f - Near black for text */
+
+    --popover: 0 0% 100%; /* #ffffff - White */
+    --popover-foreground: 0 0% 12%; /* #1f1f1f - Near black for text */
+
+    /* Primary: Burgundy/dark red */
+    --primary: 350 50% 30%; /* #7a1f2e - Deep burgundy */
+    --primary-foreground: 0 0% 100%; /* #ffffff - White for contrast */
+
+    /* Secondary: Deep navy */
+    --secondary: 215 50% 23%; /* #1a365d - Deep navy */
+    --secondary-foreground: 0 0% 100%; /* #ffffff - White for contrast */
+
+    --muted: 220 14% 96%; /* #f3f4f6 - Light gray */
+    --muted-foreground: 0 0% 45%; /* #737373 - Medium gray */
+
+    /* Accent: Lighter burgundy */
+    --accent: 350 65% 45%; /* #b52a40 - Brighter burgundy */
+    --accent-foreground: 0 0% 100%; /* #ffffff - White for contrast */
+
+    --destructive: 0 84% 60%; /* #e11d48 - Standard red */
+    --destructive-foreground: 0 0% 100%; /* #ffffff - White */
+
+    --border: 220 13% 91%; /* #e5e7eb - Light gray border */
+    --input: 220 13% 91%; /* #e5e7eb - Light gray input */
+    --ring: 350 50% 30%; /* #7a1f2e - Deep burgundy */
+
+    --radius: 0.5rem;
+
+    /* Additional semantic colors */
+    --success: 142 70% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 10%;
+    --info: 215 50% 40%;
+    --info-foreground: 0 0% 100%;
+  }
+
+  .dark {
+    /* Dark Theme - With burgundy accents and high contrast */
+    --background: 224 71% 4%; /* #111827 - Very dark blue-gray */
+    --foreground: 0 0% 95%; /* #f2f2f2 - Off-white for text */
+
+    --card: 222 47% 11%; /* #1e293b - Dark slate blue */
+    --card-foreground: 0 0% 95%; /* #f2f2f2 - Off-white for text */
+
+    --popover: 222 47% 11%; /* #1e293b - Dark slate blue */
+    --popover-foreground: 0 0% 95%; /* #f2f2f2 - Off-white for text */
+
+    /* Primary: Brighter burgundy for dark mode visibility */
+    --primary: 350 80% 65%; /* #e05c7a - Bright burgundy/ruby */
+    --primary-foreground: 224 71% 4%; /* #111827 - Very dark blue-gray */
+
+    /* Secondary: Steel blue */
+    --secondary: 215 25% 65%; /* #8ca5c7 - Steel blue */
+    --secondary-foreground: 224 71% 4%; /* #111827 - Very dark blue-gray */
+
+    --muted: 223 47% 18%; /* #2c3a57 - Dark blue-gray */
+    --muted-foreground: 215 20% 75%; /* #b4c0d3 - Light steel blue */
+
+    /* Accent: Lighter burgundy */
+    --accent: 350 80% 55%; /* #d33f60 - Medium burgundy */
+    --accent-foreground: 0 0% 100%; /* #ffffff - White */
+
+    --destructive: 0 74% 60%; /* #ef4444 - Brighter red for dark mode */
+    --destructive-foreground: 0 0% 100%; /* #ffffff - White */
+
+    --border: 222 47% 25%; /* #334155 - Medium slate blue */
+    --input: 222 47% 25%; /* #334155 - Medium slate blue */
+    --ring: 350 80% 65%; /* #e05c7a - Bright burgundy/ruby */
+
+    /* Additional semantic colors */
+    --success: 142 70% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 10%;
+    --info: 215 50% 60%;
+    --info-foreground: 0 0% 100%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Gradient effects for hero section */
+.hero-gradient {
+  background: linear-gradient(
+    135deg,
+    hsl(var(--primary) / 0.25) 0%,
+    hsl(var(--background)) 50%,
+    hsl(var(--accent) / 0.25) 100%
+  );
+}
+
+.dark .hero-gradient {
+  background: linear-gradient(
+    135deg,
+    hsl(var(--primary) / 0.15) 0%,
+    hsl(var(--background)) 50%,
+    hsl(var(--accent) / 0.15) 100%
+  );
+}
+
+/* Timeline styles */
+.timeline-item-active {
+  border-color: hsl(var(--primary));
+}
+
+/* Project card hover effects */
+.project-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Skills visualization accent */
+.skill-bubble {
+  transition: all 0.3s ease;
+}
+
+.skill-bubble:hover {
+  filter: drop-shadow(0 0 8px hsl(var(--primary) / 0.5));
+}
+
+/* Accessibility focus styles */
+:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+/* High contrast text helpers */
+.high-contrast-text {
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.dark .high-contrast-text {
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+}
