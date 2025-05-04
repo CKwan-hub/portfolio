@@ -14,7 +14,6 @@ export function useTimeline() {
       try {
         setIsLoading(true)
         const data = await fetchTimeline()
-        console.log("date from timeline: ", data)
         setTimelineItems(data.timelineItems)
         setError(null)
       } catch (err) {

@@ -15,7 +15,6 @@ export function useProjects() {
       try {
         setIsLoading(true)
         const data = await fetchProjects()
-        console.log("data from projects: ", data)
         setProjects(data.projects)
         setCategories(data.categories)
         setError(null)

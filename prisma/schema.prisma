@@ -48,6 +48,8 @@ model ProjectEntry {
   description    String
   timelineItem   TimelineItem @relation(fields: [timelineItemId], references: [id], onDelete: Cascade)
   timelineItemId String
+  techImage   String
+  uiImage    String
   createdAt      DateTime     @default(now())
   updatedAt      DateTime     @updatedAt
 }

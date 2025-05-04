@@ -1,15 +1,9 @@
 import type { Project } from "@/types/project"
-import type { Skill } from "@/types/skill"
 import type { TimelineItem } from "@/types/timeline"
 
 // API response types
 export interface ProjectsResponse {
   projects: Project[]
-  categories: string[]
-}
-
-export interface SkillsResponse {
-  skills: Skill[]
   categories: string[]
 }
 
@@ -25,18 +19,6 @@ export async function fetchProjects(): Promise<ProjectsResponse> {
 
   if (!response.ok) {
     throw new Error("Failed to fetch projects")
-  }
-
-  return response.json()
-}
-
-export async function fetchSkills(): Promise<SkillsResponse> {
-  const response = await fetch("/api/skills", {
-    next: { revalidate: 3600 }, // Revalidate every hour
-  })
-
-  if (!response.ok) {
-    throw new Error("Failed to fetch skills")
   }
 
   return response.json()

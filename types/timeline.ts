@@ -9,5 +9,7 @@ export interface TimelineItem {
   projects: {
     name: string
     description: string
+    techImage: string
+    uiImage: string
   }[]
 }
