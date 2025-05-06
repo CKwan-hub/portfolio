@@ -236,7 +236,7 @@ export function TimelineSection() {
                       ?.categories.map((category) => (
                         <span
                           key={category}
-                          className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground hover:bg-primary/80"
+                          className="inline-flex items-center rounded-lg border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground hover:bg-primary/80"
                         >
                           {category}
                         </span>
@@ -376,7 +376,7 @@ export function TimelineSection() {
                               <Image
                                 src={
                                   project.techImage ||
-                                  "/placeholder.svg?height=400&width=600"
+                                  "/images/default/placeholder.png?height=400&width=600"
                                 }
                                 alt={project.name}
                                 className="object-cover rounded-md"
@@ -387,7 +387,7 @@ export function TimelineSection() {
                             <Image
                                 src={
                                   project.uiImage ||
-                                  "/placeholder.svg?height=400&width=600"
+                                  "/images/default/placeholder.png?height=400&width=600"
                                 }
                                 alt={project.description}
                                 className="object-cover rounded-md"

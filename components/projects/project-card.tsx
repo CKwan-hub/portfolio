@@ -14,7 +14,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
     <Card className="overflow-hidden transition-all project-card border-border/40 hover:border-primary/30">
       <div className="aspect-video relative overflow-hidden">
         <Image
-          src={project.image || "/placeholder.svg?height=400&width=600"}
+          src={project.image || "/images/default/placeholder.png?height=400&width=600"}
           alt={project.title}
           className="object-cover"
           fill
